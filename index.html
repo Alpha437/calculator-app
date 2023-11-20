@@ -1,26 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <main class="app">
+    <header class="heading">
+      <div class="logo-wrapper">
+        <p class="logo">calc</p>
+      </div>
 
+      <div class="theme-wrapper">
+        <div class="theme-numbers">
+          <p class="theme-number">1</p>
+          <p class="theme-number">2</p>
+          <p class="theme-number">3</p>
+        </div>
 
-  
-  <div class="attribution">
+        <div class="theme-selector">
+          <p class="theme-title">Theme</p>
+          <div class="theme-buttons">
+            <input type="radio" name="theme" id="dark" class="dark">
+            <input type="radio" name="theme" id="light" class="light">
+            <input type="radio" name="theme" id="violet" class="violet">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="screen">
+      <p class="operation"></p>
+    </div>
+
+    <div class="buttons-grid">
+      <button class="button">1</button>
+      <button class="button">2</button>
+      <button class="button">3</button>
+      <button class="button">4</button>
+      <button class="button">5</button>
+      <button class="button">6</button>
+      <button class="button">7</button>
+      <button class="button">8</button>
+      <button class="button">9</button>
+      <button class="button">0</button>
+      <button class="button">.</button>
+      <button class="button">/</button>
+      <button class="button">+</button>
+      <button class="button">-</button>
+      <button class="button">x</button>
+      <button class="button">Del</button>
+      <button class="button">Reset</button>
+      <button class="button">=</button>
+    </div>
+  </main>
+
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
+  <script src="script.js"></script>
 </body>
+
 </html>
