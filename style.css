@@ -167,6 +167,7 @@ input[type='radio'] {
   display: flex;
   align-items: center;
   justify-content: right;
+  /* height: 2rem; */
 }
 
 .buttons-grid {
@@ -226,15 +227,18 @@ input[type='radio'] {
   .app {
     max-width: 500px;
   }
+  .screen {
+    height: 5rem;
+  }
   .buttons-grid {
     row-gap: 1.2rem;
   }
   .button{
-    padding: 0;
+    padding: .7rem;
   }
   .reset,
   .clr {
-    padding: .7rem 0;
+    padding: 1rem 0;
   }
 }
 
