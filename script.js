@@ -4,8 +4,7 @@ const operators = document.querySelectorAll('.operator');
 const deleteBtn = document.querySelector('.del');
 const resetBtn = document.querySelector('.reset');
 
-// Destructuring
-const [plusBtn, subBtn, divBtn, mulBtn] = operators;
+
 
 calcScreen.textContent = '';
 let operator = false;
@@ -24,6 +23,8 @@ function displayNumber(operator = false) {
     calcScreen.textContent += this.textContent;
   } else if (calcScreen.textContent === '' && this.textContent === '.') {
     calcScreen.textContent = '';
+  } else if (calcScreen.textContent.length === 25) {
+    calcScreen.textContent = calcScreen.textContent;
   } else {
     calcScreen.textContent +=
       calcScreen.textContent.length > 1 &&
@@ -33,33 +34,57 @@ function displayNumber(operator = false) {
   }
 }
 
-
-let calcSign;
-
+let operands = [];
+let operation = 0;
 function performOperation() {
-  let calcSign = this.textContent;
-  operator = true;
+  const sign = this.textContent;
   let str = calcScreen.textContent.includes(',')
     ? calcScreen.textContent.split(',').join('')
     : calcScreen.textContent;
-  let number = Number(str);
-
-  switch (calcSign) {
-    case '+':
-      break;
-    case '/':
-      break;
-    case '-':
-      break;
-    case '=':
-      break;
+  if (!operator) {
+    operands.push(str);
   }
+  operator = true;
+
+  if (operands.length >= 3 && !isNaN(Number(operands[operands.length - 1]))) {
+    operation = eval(operands.join(''));
+    calcScreen.textContent = operation;
+  } else if (
+    operands.length >= 2 &&
+    isNaN(Number(operands[operands.length - 1]))
+  ) {
+    operands.pop();
+  }
+
+  if (sign === '=') {
+    operation = eval(operands.join(''));
+    calcScreen.textContent = operation;
+  } else if (sign === 'x') {
+    operation = eval(operands.join(''));
+    operands = [];
+    operands.push(operation);
+    operands.push('*');
+  } else if (sign === '/') {
+    operation = eval(operands.join(''));
+    operands = [];
+    operands.push(operation);
+    operands.push(sign);
+  } else {
+    operands.push(sign);
+  }
+}
+
+function reset() {
+  operation = 0;
+  operands = [];
 }
 
 numbers.forEach((number) => {
   number.addEventListener('click', () => {
     displayNumber.call(number, operator);
-    operator = !operator;
+    if (operator) {
+      operator = !operator;
+    }
   });
 });
 
@@ -84,6 +109,5 @@ deleteBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', () => {
   calcScreen.textContent = '';
-  operand1 = 0;
-  operation = 0;
+  reset();
 });
