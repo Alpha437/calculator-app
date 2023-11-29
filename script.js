@@ -3,8 +3,20 @@ const calcScreen = document.querySelector('.screen');
 const operators = document.querySelectorAll('.operator');
 const deleteBtn = document.querySelector('.del');
 const resetBtn = document.querySelector('.reset');
+const themes = document.querySelectorAll("[name='theme']");
 
+function storeTheme(theme) {
+  localStorage.setItem('theme', theme);
+}
 
+function loadTheme(theme) {
+  const activeTheme = localStorage.getItem('theme');
+  themes.forEach((theme) => {
+    if (theme.id === activeTheme) {
+      theme.checked = true;
+    }
+  });
+}
 
 calcScreen.textContent = '';
 let operator = false;
@@ -111,3 +123,9 @@ resetBtn.addEventListener('click', () => {
   calcScreen.textContent = '';
   reset();
 });
+
+themes.forEach(theme => {
+  theme.addEventListener('click', () => storeTheme(theme.id));
+});
+
+window.onload = loadTheme;
