@@ -243,5 +243,77 @@ input[type='radio'] {
 }
 
 
+@media (prefers-color-scheme: light) {
+  /* || VARIABLES */
+:root {
+  --main-bg: hsl(222, 29%, 39%);
+  --keypad-bg: hsl(223, 35%, 25%);
+  --screen-bg: hsl(224, 39%, 19%);
+  
+  /* Keys */
+  --key-bg1: hsl(225, 25%, 52%);
+  --key-bg1-bright: hsl(225, 36%, 67%);
+  --key-shadow1: hsl(224, 31%, 38%);
+  --key-bg2: hsl(6, 67%, 50%);
+  --key-bg2-bright: hsl(6, 100%, 69%);
+  --key-shadow2: hsl(6, 75%, 37%);
+  --key-bg3: hsl(30, 25%, 89%);
+  --key-bg3-bright: hsl(30, 64%, 95%);
+  --key-shadow3: hsl(28, 20%, 68%);
+
+  /* Text */
+  --text-clr: hsl(0, 0%, 100%);
+  --text-white: hsl(0, 0%, 100%);
+  --text-equal: hsl(0, 0%, 100%);
+  --text-clr-btn: hsl(221, 14%, 31%);
+}
+
+:root:has(#light:checked) {
+  --main-bg: hsl(0, 10%, 90%);
+  --keypad-bg: hsl(0, 5%, 85%);
+  --screen-bg: hsl(0, 0%, 96%);
+  
+  /* Keys */
+  --key-bg1: hsl(185, 42%, 39%);
+  --key-bg1-bright: hsl(185, 42%, 48%);
+  --key-shadow1: hsl(185, 58%, 29%);
+  --key-bg2: hsl(25, 98%, 40%);
+  --key-bg2-bright: hsl(25, 100%, 46%);
+  --key-shadow2: hsl(25, 99%, 31%);
+  --key-bg3: hsl(45, 7%, 93%);
+  --key-bg3-bright: hsl(40, 11%, 98%);
+  --key-shadow3: hsl(35, 11%, 65%);
+
+  /* Text */
+  --text-clr: hsl(60, 10%, 25%);
+  --text-clr-btn: hsl(60, 10%, 25%);
+  --text-white: hsl(0, 0%, 100%);
+  --text-equal: hsl(0, 0%, 100%);
+}
+
+:root:has(#violet:checked) {
+  --main-bg: hsl(268, 75%, 12%);
+  --keypad-bg: hsl(268, 71%, 17%);
+  --screen-bg: hsl(268, 71%, 17%);
+  
+  /* Keys */
+  --key-bg1: hsl(281, 89%, 30%);
+  --key-bg1-bright: hsl(281, 91%, 36%);
+  --key-shadow1: hsl(285, 91%, 57%);
+  --key-bg2: hsl(176, 100%, 46%);
+  --key-bg2-bright: hsl(176, 100%, 50%);
+  --key-shadow2: hsl(177, 92%, 72%);
+  --key-bg3: hsl(268, 47%, 24%);
+  --key-bg3-bright: hsl(269, 49%, 38%);
+  --key-shadow3: hsl(290, 70%, 38%);
+
+  /* Text */
+  --text-clr: hsl(52, 100%, 67%);
+  --text-clr-btn: hsl(52, 100%, 67%);
+  --text-white: hsl(0, 0%, 100%);
+  --text-equal: hsl(198, 20%, 17%);
+}
+}
+
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
