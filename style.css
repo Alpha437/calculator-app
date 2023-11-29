@@ -292,7 +292,7 @@ input[type='radio'] {
 }
 
 :root:has(#violet:checked) {
-  --main-bg: hsl(268, 75%, 12%);
+  --main-bg: hsl(268, 75%, 22%);
   --keypad-bg: hsl(268, 71%, 17%);
   --screen-bg: hsl(268, 71%, 17%);
   
