@@ -35,7 +35,7 @@ function displayNumber(operator = false) {
     calcScreen.textContent += this.textContent;
   } else if (calcScreen.textContent === '' && this.textContent === '.') {
     calcScreen.textContent = '';
-  } else if (calcScreen.textContent.length === 15) {
+  } else if (calcScreen.textContent.length === 15 && window.screen.width <= 767 || calcScreen.textContent.length === 23 && window.screen.width > 767) {
     calcScreen.textContent = calcScreen.textContent;
   } else {
     calcScreen.textContent +=
